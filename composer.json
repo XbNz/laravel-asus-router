@@ -1,0 +1,13 @@
+{
+    "name": "xbnz/laravel-asus-router",
+    "description": "Laravel package for accessing your ASUS Merlin router's statistics",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "AG",
+            "email": "fdwnct@gmail.com"
+        }
+    ],
+    "require": {}
+}
