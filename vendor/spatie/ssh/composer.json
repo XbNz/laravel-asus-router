@@ -1,0 +1,44 @@
+{
+    "name": "spatie/ssh",
+    "description": "A lightweight package to execute commands over an SSH connection",
+    "keywords": [
+        "spatie",
+        "ssh"
+    ],
+    "homepage": "https://github.com/spatie/ssh",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0|^7.4",
+        "symfony/process": "^4.3 || ^5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.4",
+        "spatie/phpunit-snapshot-assertions": "^4.0",
+        "symfony/var-dumper": "^5.0"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Ssh\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\Ssh\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    }
+}
