@@ -22,7 +22,7 @@ class Router extends RouterSetup
             ->isSuccessful();
     }
 
-    public function getWanIp(): Wan
+    public function wanInfo(): Wan
     {
         $result = $this->loggedInShell
             ->execute([
@@ -31,6 +31,6 @@ class Router extends RouterSetup
                 'nvram get wan1_ipaddr',
             ])->getOutput();
 
-        Wan::withIps($result);
+        return Wan::withTerminalOutput($result);
     }
 }

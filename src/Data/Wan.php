@@ -4,14 +4,22 @@
 namespace XbNz\AsusRouter\Data;
 
 
-class Wan
-{
-    protected string $output;
-    public function __construct(protected $output){}
+use XbNz\AsusRouter\Data\Validators\ValidatorInterface;
 
-    public static function withIps(string $output)
+class Wan extends DataObject
+{
+    public function __construct(public string $output)
+    {
+        parent::__construct();
+    }
+
+    public function getIpList(): \Illuminate\Support\Collection
+    {
+        return $this->validated;
+    }
+
+    public static function withTerminalOutput(string $output): self
     {
         return new static($output);
     }
-
 }

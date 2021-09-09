@@ -12,6 +12,6 @@ class SshLoginTest extends TestCase
     /** @test */
     public function it_successfully_establishes_a_connection_with_asus_router()
     {
-        dd((new Router())->getWanIp());
+        dd((new Router())->wanInfo()->getIpList());
     }
 }
