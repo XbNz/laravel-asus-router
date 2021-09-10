@@ -10,4 +10,5 @@ return [
     'router_username' => 'ASUS',
     'router_ip_address' => '192.168.50.1',
     'router_port' => '22',
+    'timeout' => '1'
 ];

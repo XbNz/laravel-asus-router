@@ -6,23 +6,22 @@ namespace XbNz\AsusRouter;
 
 use Illuminate\Support\Collection;
 use Spatie\Ssh\Ssh;
+use Symfony\Component\Process\Exception\ProcessTimedOutException;
+use Symfony\Component\Process\Process;
 use XbNz\AsusRouter\Data\Wan;
+use XbNz\AsusRouter\Exceptions\RouterSshException;
 
 class Router extends RouterSetup
 {
-    protected function login(): Ssh
-    {
-        return Ssh::create(
-            config('router-config.router_username'),
-            config('router-config.router_ip_address'),
-        )->usePort(config('router-config.router_port'));
-    }
-
     protected function healthCheck(): bool
     {
-        return $this->loggedInShell
-            ->execute('ifconfig')
-            ->isSuccessful();
+        try {
+            return $this->loggedInShell
+                ->execute('ifconfig')
+                ->isSuccessful();
+        } catch (ProcessTimedOutException $e) {
+            throw new RouterSshException('Timeout: I ran a health check on the SSH connection and it failed. I suspect the router is not online with this IP.');
+        }
     }
 
     public function wanInfo(): Wan

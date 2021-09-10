@@ -13,6 +13,7 @@ class WanValidator implements ValidatorInterface
     public function validate(string $terminalOutput): Collection|bool
     {
         $ipAddresses = collect(explode(PHP_EOL, $terminalOutput));
+
         $validIps = $ipAddresses->filter(function ($ip){
             return filter_var(
                 $ip,
@@ -22,7 +23,7 @@ class WanValidator implements ValidatorInterface
             );
         });
 
-        if (! $validIps){
+        if ($validIps->isEmpty()){
             throw new NoPublicIpDetectedException('Was not able to find a public IP address');
         }
         return $validIps;

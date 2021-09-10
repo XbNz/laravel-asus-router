@@ -11,7 +11,6 @@ use XbNz\AsusRouter\Data\Validators\WanValidator;
 
 abstract class DataObject
 {
-//    protected string $callingClass;
     protected string $rawOutput;
     protected Collection $validated;
     protected Collection $validators;

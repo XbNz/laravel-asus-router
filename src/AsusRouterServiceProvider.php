@@ -3,6 +3,8 @@
 namespace XbNz\AsusRouter;
 
 
+use Spatie\Ssh\Ssh;
+use Symfony\Component\Process\Process;
 use XbNz\AsusRouter\Data\DataObject;
 use XbNz\AsusRouter\Data\TestFeature;
 use XbNz\AsusRouter\Data\Validators\ValidatorInterface;
@@ -14,13 +16,22 @@ class AsusRouterServiceProvider extends \Illuminate\Support\ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'router-config');
-
         $this->app->tag([WanValidator::class], 'data-validators');
-
         $this->app
             ->when(Wan::class)
             ->needs('$validators')
             ->giveTagged('data-validators');
+
+        $this->app->bind(Ssh::class, function (){
+            $session = new Ssh(
+                config('router-config.router_username'),
+                config('router-config.router_ip_address'),
+                config('router-config.router_port'),
+            );
+            return $session
+                ->configureProcess(fn (Process $process)
+                => $process->setTimeout(config('router-config.timeout')));
+        });
 
     }
 
