@@ -9,5 +9,6 @@ use XbNz\AsusRouter\Data\DataObject;
 
 interface ValidatorInterface
 {
-    public function validate(DataObject $data): Collection|bool;
+    public function validate(string $terminalOutput): Collection|bool;
+    public function supports();
 }

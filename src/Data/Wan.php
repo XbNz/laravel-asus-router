@@ -8,18 +8,15 @@ use XbNz\AsusRouter\Data\Validators\ValidatorInterface;
 
 class Wan extends DataObject
 {
-    public function __construct(public string $output)
-    {
-        parent::__construct();
-    }
 
     public function getIpList(): \Illuminate\Support\Collection
     {
-        return $this->validated;
+        return $this->validate();
     }
 
-    public static function withTerminalOutput(string $output): self
+    public function setTerminalOutput(string $output): self
     {
-        return new static($output);
+        $this->rawOutput = $output;
+        return $this;
     }
 }

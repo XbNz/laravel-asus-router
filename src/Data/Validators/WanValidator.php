@@ -10,9 +10,8 @@ use XbNz\AsusRouter\Exceptions\NoPublicIpDetectedException;
 
 class WanValidator implements ValidatorInterface
 {
-    public function validate(DataObject $data): Collection|bool
+    public function validate(string $terminalOutput): Collection|bool
     {
-        $terminalOutput = $data->output;
         $ipAddresses = collect(explode(PHP_EOL, $terminalOutput));
         $validIps = $ipAddresses->filter(function ($ip){
             return filter_var(
@@ -27,5 +26,10 @@ class WanValidator implements ValidatorInterface
             throw new NoPublicIpDetectedException('Was not able to find a public IP address');
         }
         return $validIps;
+    }
+
+    public function supports()
+    {
+        return strtolower('wan');
     }
 }

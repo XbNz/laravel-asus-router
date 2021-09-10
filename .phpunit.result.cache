@@ -1,1 +1,1 @@
-{"version":1,"defects":{"XbNz\\AsusRouter\\Tests\\Unit\\SshLoginTest::it_successfully_establishes_a_connection_with_asus_router":4},"times":{"XbNz\\AsusRouter\\Tests\\Unit\\SshLoginTest::it_successfully_establishes_a_connection_with_asus_router":0.292}}
+{"version":1,"defects":{"XbNz\\AsusRouter\\Tests\\Unit\\SshLoginTest::it_successfully_establishes_a_connection_with_asus_router":4},"times":{"XbNz\\AsusRouter\\Tests\\Unit\\SshLoginTest::it_successfully_establishes_a_connection_with_asus_router":0.296}}

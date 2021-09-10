@@ -12,7 +12,10 @@ class Router extends RouterSetup
 {
     protected function login(): Ssh
     {
-        return Ssh::create('ASUS', '192.168.50.1')->usePort(22);
+        return Ssh::create(
+            config('router-config.router_username'),
+            config('router-config.router_ip_address'),
+        )->usePort(config('router-config.router_port'));
     }
 
     protected function healthCheck(): bool
@@ -31,6 +34,7 @@ class Router extends RouterSetup
                 'nvram get wan1_ipaddr',
             ])->getOutput();
 
-        return Wan::withTerminalOutput($result);
+        return app(Wan::class)
+            ->setTerminalOutput($result);
     }
 }
