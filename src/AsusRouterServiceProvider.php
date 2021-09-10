@@ -5,6 +5,7 @@ namespace XbNz\AsusRouter;
 
 use Spatie\Ssh\Ssh;
 use Symfony\Component\Process\Process;
+use XbNz\AsusRouter\Console\SetupCommand;
 use XbNz\AsusRouter\Data\DataObject;
 use XbNz\AsusRouter\Data\TestFeature;
 use XbNz\AsusRouter\Data\Validators\ValidatorInterface;
@@ -39,10 +40,14 @@ class AsusRouterServiceProvider extends \Illuminate\Support\ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
+            $this->commands([
+                SetupCommand::class,
+            ]);
+
             $this->publishes([
                     __DIR__.'/../config/config.php' =>
                     config_path('router-config.php')
-            ], 'config');
+            ], 'router-config');
         }
     }
 }
