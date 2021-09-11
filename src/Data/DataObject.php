@@ -10,22 +10,28 @@ use XbNz\AsusRouter\Data\Validators\WanIpListValidator;
 use XbNz\AsusRouter\Exceptions\ValidatorNotFoundException;
 
 
-abstract class DataObject
+class DataObject
 {
     protected Collection $validators;
 
-    public function __construct(array $validators)
+    public function __construct()
     {
-        $this->validators = collect($validators);
+        $this->validators = collect(app()->tagged('data-validators'));
     }
 
-    public function giveValidatorFor(string $useCase): ValidatorInterface
+    protected function giveValidatorFor(string $useCase): ValidatorInterface
     {
-        return $this->validators->map(function ($validator) use ($useCase) {
+        $validator = $this->validators->filter(function ($validator) use ($useCase) {
             if ($validator->supports() === strtolower($useCase)){
                 return $validator;
             };
+            return false;
+        });
+
+        if ($validator->isEmpty()){
             throw new ValidatorNotFoundException("No validator that supports {$useCase} was discovered");
-        })->first();
+        }
+
+        return $validator->first();
     }
 }

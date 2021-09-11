@@ -42,7 +42,7 @@ class WanTest extends TestCase
             ->andReturn($processMock);
 
         $router = new Router();
-        $ipList = $router->wanInfo()->getIpList();
+        $ipList = $router->wan()->getIpList();
 
         $this->assertCount(2, $ipList);
         $this->assertTrue($ipList->contains('1.1.1.1'));

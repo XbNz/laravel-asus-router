@@ -29,7 +29,7 @@ class WanIpListValidator implements ValidatorInterface
         return $validIps;
     }
 
-    public function supports()
+    public function supports(): string
     {
         return strtolower('wan-ip-list');
     }
