@@ -18,13 +18,6 @@ class SetupCommandTest extends TestCase
 
 
     /** @test */
-    public function running_the_setup_command_for_the_first_time_creates_a_config_file()
-    {
-        $this->artisan('merlin:setup');
-        $this->assertFileExists(config_path('router-config.php'));
-    }
-
-    /** @test */
     public function running_the_setup_command_subsequently_warns_the_user_of_overwrite_answer_no()
     {
         $this->artisan('vendor:publish', [
@@ -53,7 +46,11 @@ class SetupCommandTest extends TestCase
         $modifiedDateBeforeCommand = File::lastModified(config_path('router-config.php'));
 
         $this->artisan('merlin:setup')
-            ->expectsConfirmation('You already have a router configuration file in your config directory. Overwrite and proceed?', 'yes')->assertExitCode(0);
+            ->expectsConfirmation('You already have a router configuration file in your config directory. Overwrite and proceed?', 'yes')
+            ->expectsQuestion('Enter your router\'s username', 'ASUS')
+            ->expectsQuestion('Enter your router\'s IP address', '192.168.50.1')
+            ->expectsQuestion('Enter your router\'s SSH port', '22')
+            ->expectsQuestion('Connection timeout (seconds)', '1');
 
         $modifiedDateAfterCommand = File::lastModified(config_path('router-config.php'));
 
@@ -75,7 +72,7 @@ class SetupCommandTest extends TestCase
     }
 
     /** @test */
-    public function providing_valid_answers_saves_config_file_with_entries()
+    public function providing_valid_answers_saves_config_file_and_prints_env_values()
     {
 
         $command = $this->artisan('merlin:setup')
@@ -83,9 +80,13 @@ class SetupCommandTest extends TestCase
             ->expectsQuestion('Enter your router\'s IP address', '192.168.50.1')
             ->expectsQuestion('Enter your router\'s SSH port', '22')
             ->expectsQuestion('Connection timeout (seconds)', '1')
-            ->execute();
-
-        dd(File::get(config_path('router-config.php')));
+            ->expectsOutput('Configuration file created. Please manually paste the values below in your .env file')
+            ->expectsOutput(
+                "ROUTER_USER=ASUS" . PHP_EOL .
+                "ROUTER_IP=192.168.50.1" . PHP_EOL .
+                "ROUTER_PORT=22" . PHP_EOL .
+                "ROUTER_TIMEOUT=1" . PHP_EOL
+            );
 
     }
 }

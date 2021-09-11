@@ -9,14 +9,15 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
+use XbNz\AsusRouter\Router;
 
 class SetupCommand extends Command
 {
     protected $signature = 'merlin:setup';
     
-    protected $description = 'Quick setup for router configurations to save you manual work.';
+    protected $description = 'Quick setup for router configurations.';
 
-    public function handle()
+    public function handle(Router $router)
     {
         if (File::exists(config_path('router-config.php'))){
             $confirm = $this->confirm('You already have a router configuration file in your config directory. Overwrite and proceed?', false);
@@ -28,11 +29,6 @@ class SetupCommand extends Command
             File::delete(config_path('router-config.php'));
         }
 
-        $this->call('vendor:publish', [
-            '--tag' => 'router-config',
-        ]);
-
-
         $data = [];
         $data['username'] = $this->ask('Enter your router\'s username');
         $data['ip'] = $this->ask('Enter your router\'s IP address', '192.168.50.1');
@@ -41,7 +37,7 @@ class SetupCommand extends Command
 
         $validator = Validator::make($data, [
             'username' => '',
-            'ip' => ['required', 'ip'],
+            'ip' => ['required'],
             'port' => ['required', 'numeric', 'min:1', 'max:65535'],
             'timeout' => ['required', 'numeric', 'min:0'],
         ]);
@@ -56,9 +52,17 @@ class SetupCommand extends Command
             return 0;
         }
 
-        //TODO: Config::set does not physically change the contents of
-        // the config file. Find a way to stub a config file here.
+        $this->call('vendor:publish', [
+            '--tag' => 'router-config',
+        ]);
 
-        $this->info('Configuration file created with given values!');
+        $this->info('Configuration file created. Please manually paste the values below in your .env file');
+        $this->info(
+            "ROUTER_USER={$validated['username']}" . PHP_EOL .
+            "ROUTER_IP={$validated['ip']}" . PHP_EOL .
+            "ROUTER_PORT={$validated['port']}" . PHP_EOL .
+            "ROUTER_TIMEOUT={$validated['timeout']}" . PHP_EOL
+        );
+
     }
 }

@@ -13,7 +13,7 @@ use XbNz\AsusRouter\Exceptions\RouterSshException;
 
 class Router extends RouterSetup
 {
-    protected function healthCheck(): bool
+    public function healthCheck(): bool
     {
         try {
             return $this->loggedInShell
