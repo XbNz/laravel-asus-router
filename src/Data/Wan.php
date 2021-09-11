@@ -4,19 +4,21 @@
 namespace XbNz\AsusRouter\Data;
 
 
+use Spatie\Ssh\Ssh;
 use XbNz\AsusRouter\Data\Validators\ValidatorInterface;
 
 class Wan extends DataObject
 {
-
     public function getIpList(): \Illuminate\Support\Collection
     {
-        return $this->validate();
-    }
+        $rawOutput = app(Ssh::class)
+            ->execute([
+                'nvram get wan_ipaddr',
+                'nvram get wan0_ipaddr',
+                'nvram get wan1_ipaddr',
+            ])->getOutput();
 
-    public function setTerminalOutput(string $output): self
-    {
-        $this->rawOutput = $output;
-        return $this;
+        $validator = $this->giveValidatorFor('wan-ip-list');
+        return $validator->validate($rawOutput);
     }
 }

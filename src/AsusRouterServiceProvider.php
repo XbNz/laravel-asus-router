@@ -9,7 +9,7 @@ use XbNz\AsusRouter\Console\SetupCommand;
 use XbNz\AsusRouter\Data\DataObject;
 use XbNz\AsusRouter\Data\TestFeature;
 use XbNz\AsusRouter\Data\Validators\ValidatorInterface;
-use XbNz\AsusRouter\Data\Validators\WanValidator;
+use XbNz\AsusRouter\Data\Validators\WanIpListValidator;
 use XbNz\AsusRouter\Data\Wan;
 
 class AsusRouterServiceProvider extends \Illuminate\Support\ServiceProvider
@@ -17,13 +17,13 @@ class AsusRouterServiceProvider extends \Illuminate\Support\ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'router-config');
-        $this->app->tag([WanValidator::class], 'data-validators');
+        $this->app->tag([WanIpListValidator::class], 'data-validators');
         $this->app
             ->when(Wan::class)
             ->needs('$validators')
             ->giveTagged('data-validators');
 
-        $this->app->bind(Ssh::class, function (){
+        $this->app->singleton(Ssh::class, function (){
             $session = new Ssh(
                 config('router-config.router_username'),
                 config('router-config.router_ip_address'),

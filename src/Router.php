@@ -16,7 +16,7 @@ class Router extends RouterSetup
     public function healthCheck(): bool
     {
         try {
-            return $this->loggedInShell
+            return app(Ssh::class)
                 ->execute('ifconfig')
                 ->isSuccessful();
         } catch (ProcessTimedOutException $e) {
@@ -26,14 +26,6 @@ class Router extends RouterSetup
 
     public function wanInfo(): Wan
     {
-        $result = $this->loggedInShell
-            ->execute([
-                'nvram get wan_ipaddr',
-                'nvram get wan0_ipaddr',
-                'nvram get wan1_ipaddr',
-            ])->getOutput();
-
-        return app(Wan::class)
-            ->setTerminalOutput($result);
+        return app(Wan::class);
     }
 }

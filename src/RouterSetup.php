@@ -15,8 +15,6 @@ abstract class RouterSetup
     protected Ssh $loggedInShell;
     public function __construct()
     {
-        $this->loggedInShell = app(Ssh::class);
-
         if (! $this->healthCheck()){
             throw new RouterSshException('I ran a health check on the SSH connection and it failed. I suspect there is something wrong with the port, username or SSH key.');
         }

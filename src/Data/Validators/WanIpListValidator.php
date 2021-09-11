@@ -8,7 +8,7 @@ use Illuminate\Support\Collection;
 use XbNz\AsusRouter\Data\DataObject;
 use XbNz\AsusRouter\Exceptions\NoPublicIpDetectedException;
 
-class WanValidator implements ValidatorInterface
+class WanIpListValidator implements ValidatorInterface
 {
     public function validate(string $terminalOutput): Collection|bool
     {
@@ -31,6 +31,6 @@ class WanValidator implements ValidatorInterface
 
     public function supports()
     {
-        return strtolower('wan');
+        return strtolower('wan-ip-list');
     }
 }

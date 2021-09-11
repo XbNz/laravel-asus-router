@@ -6,13 +6,12 @@ namespace XbNz\AsusRouter\Data;
 use Illuminate\Support\Collection;
 use ReflectionClass;
 use XbNz\AsusRouter\Data\Validators\ValidatorInterface;
-use XbNz\AsusRouter\Data\Validators\WanValidator;
+use XbNz\AsusRouter\Data\Validators\WanIpListValidator;
+use XbNz\AsusRouter\Exceptions\ValidatorNotFoundException;
 
 
 abstract class DataObject
 {
-    protected string $rawOutput;
-    protected Collection $validated;
     protected Collection $validators;
 
     public function __construct(array $validators)
@@ -20,18 +19,13 @@ abstract class DataObject
         $this->validators = collect($validators);
     }
 
-    abstract public function setTerminalOutput(string $output): self;
-
-    protected function validate()
+    public function giveValidatorFor(string $useCase): ValidatorInterface
     {
-        $child = new ReflectionClass($this);
-        $validator = $this->validators->map(function ($validator) use ($child) {
-            if ($validator->supports() === strtolower($child->getShortName())){
+        return $this->validators->map(function ($validator) use ($useCase) {
+            if ($validator->supports() === strtolower($useCase)){
                 return $validator;
             };
+            throw new ValidatorNotFoundException("No validator that supports {$useCase} was discovered");
         })->first();
-
-        return $validator->validate($this->rawOutput);
     }
-
 }
