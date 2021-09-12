@@ -6,6 +6,8 @@ namespace XbNz\AsusRouter\Tests\Feature;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
+use Symfony\Component\Process\Process;
+use XbNz\AsusRouter\Router;
 use XbNz\AsusRouter\Tests\TestCase;
 
 class SetupCommandTest extends TestCase
@@ -27,8 +29,10 @@ class SetupCommandTest extends TestCase
         sleep(1);
         $modifiedDateBeforeCommand = File::lastModified(config_path('router-config.php'));
 
+
         $this->artisan('merlin:setup')
             ->expectsConfirmation('You already have a router configuration file in your config directory. Overwrite and proceed?', 'no')->assertExitCode(0);
+
 
         $modifiedDateAfterCommand = File::lastModified(config_path('router-config.php'));
 
@@ -89,4 +93,5 @@ class SetupCommandTest extends TestCase
             );
 
     }
+
 }

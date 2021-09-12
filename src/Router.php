@@ -12,8 +12,15 @@ use XbNz\AsusRouter\Data\System;
 use XbNz\AsusRouter\Data\Wan;
 use XbNz\AsusRouter\Exceptions\RouterSshException;
 
-class Router extends RouterSetup
+class Router
 {
+    public function __construct()
+    {
+        if (! $this->healthCheck()){
+            throw new RouterSshException('I ran a health check on the SSH connection and it failed. I suspect there is something wrong with the port, username or SSH key.');
+        }
+    }
+
     public function healthCheck(): bool
     {
         try {

@@ -28,6 +28,7 @@ class AsusRouterServiceProvider extends \Illuminate\Support\ServiceProvider
                 config('router-config.router_ip_address'),
                 config('router-config.router_port'),
             );
+
             return $session
                 ->configureProcess(fn (Process $process)
                 => $process->setTimeout(config('router-config.timeout')));

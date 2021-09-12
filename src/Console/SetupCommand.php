@@ -17,7 +17,7 @@ class SetupCommand extends Command
     
     protected $description = 'Quick setup for router configurations.';
 
-    public function handle(Router $router)
+    public function handle()
     {
         if (File::exists(config_path('router-config.php'))){
             $confirm = $this->confirm('You already have a router configuration file in your config directory. Overwrite and proceed?', false);
