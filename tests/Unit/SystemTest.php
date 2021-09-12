@@ -39,6 +39,4 @@ class SystemTest extends TestCase
         RSA::load($keyList[0]);
         RSA::load($keyList[1]);
     }
-
-    //TODO: create inverse test
 }
