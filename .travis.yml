@@ -1,0 +1,13 @@
+
+os:
+  - linux
+  -
+
+language: php
+
+php:
+  - 8.0
+  - 7.4
+
+script:
+  - vendor/bin/phpunit
