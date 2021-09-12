@@ -800,17 +800,17 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.59.0",
-            "version_normalized": "8.59.0.0",
+            "version": "v8.60.0",
+            "version_normalized": "8.60.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "51d4755cc6232e7f8abb437567d713fa37661da2"
+                "reference": "44f16a31a1d4ac8a51605550d7796e2273984a48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/51d4755cc6232e7f8abb437567d713fa37661da2",
-                "reference": "51d4755cc6232e7f8abb437567d713fa37661da2",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/44f16a31a1d4ac8a51605550d7796e2273984a48",
+                "reference": "44f16a31a1d4ac8a51605550d7796e2273984a48",
                 "shasum": ""
             },
             "require": {
@@ -924,7 +924,7 @@
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^2.0).",
                 "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
             },
-            "time": "2021-09-07T13:29:53+00:00",
+            "time": "2021-09-08T13:37:21+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1938,28 +1938,28 @@
         },
         {
             "name": "orchestra/testbench",
-            "version": "v6.20.1",
-            "version_normalized": "6.20.1.0",
+            "version": "v6.21.0",
+            "version_normalized": "6.21.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench.git",
-                "reference": "986ff30846bca4547cf11ed422511673450dcb02"
+                "reference": "9082c6e2b8abd5e8aacb7c2895f24c1b1b3f59f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench/zipball/986ff30846bca4547cf11ed422511673450dcb02",
-                "reference": "986ff30846bca4547cf11ed422511673450dcb02",
+                "url": "https://api.github.com/repos/orchestral/testbench/zipball/9082c6e2b8abd5e8aacb7c2895f24c1b1b3f59f1",
+                "reference": "9082c6e2b8abd5e8aacb7c2895f24c1b1b3f59f1",
                 "shasum": ""
             },
             "require": {
                 "laravel/framework": "^8.54",
                 "mockery/mockery": "^1.4.2",
-                "orchestra/testbench-core": "^6.24.1",
+                "orchestra/testbench-core": "^6.25",
                 "php": "^7.3 || ^8.0",
                 "phpunit/phpunit": "^8.4 || ^9.3.3",
                 "spatie/laravel-ray": "^1.18"
             },
-            "time": "2021-08-25T05:23:48+00:00",
+            "time": "2021-09-08T08:33:50+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1990,7 +1990,7 @@
             ],
             "support": {
                 "issues": "https://github.com/orchestral/testbench/issues",
-                "source": "https://github.com/orchestral/testbench/tree/v6.20.1"
+                "source": "https://github.com/orchestral/testbench/tree/v6.21.0"
             },
             "funding": [
                 {
@@ -2006,17 +2006,17 @@
         },
         {
             "name": "orchestra/testbench-core",
-            "version": "v6.24.1",
-            "version_normalized": "6.24.1.0",
+            "version": "v6.25.1",
+            "version_normalized": "6.25.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench-core.git",
-                "reference": "0e77a2e62cf9be1e541cb44f65d3ac4774015c87"
+                "reference": "99fb87c96cc7876176217470f81b447e4deb41e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/0e77a2e62cf9be1e541cb44f65d3ac4774015c87",
-                "reference": "0e77a2e62cf9be1e541cb44f65d3ac4774015c87",
+                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/99fb87c96cc7876176217470f81b447e4deb41e8",
+                "reference": "99fb87c96cc7876176217470f81b447e4deb41e8",
                 "shasum": ""
             },
             "require": {
@@ -2041,7 +2041,7 @@
                 "orchestra/testbench-dusk": "Allow using Laravel Dusk for testing (^6.0).",
                 "phpunit/phpunit": "Allow using PHPUnit for testing (^8.4|^9.3.3)."
             },
-            "time": "2021-08-25T05:01:24+00:00",
+            "time": "2021-09-10T17:36:06+00:00",
             "bin": [
                 "testbench"
             ],
@@ -2055,7 +2055,10 @@
             "autoload": {
                 "psr-4": {
                     "Orchestra\\Testbench\\": "src/"
-                }
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2689,35 +2692,35 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.13.0",
-            "version_normalized": "1.13.0.0",
+            "version": "1.14.0",
+            "version_normalized": "1.14.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "be1996ed8adc35c3fd795488a653f4b518be70ea"
+                "reference": "d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/be1996ed8adc35c3fd795488a653f4b518be70ea",
-                "reference": "be1996ed8adc35c3fd795488a653f4b518be70ea",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e",
+                "reference": "d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.2",
-                "php": "^7.2 || ~8.0, <8.1",
+                "php": "^7.2 || ~8.0, <8.2",
                 "phpdocumentor/reflection-docblock": "^5.2",
                 "sebastian/comparator": "^3.0 || ^4.0",
                 "sebastian/recursion-context": "^3.0 || ^4.0"
             },
             "require-dev": {
-                "phpspec/phpspec": "^6.0",
+                "phpspec/phpspec": "^6.0 || ^7.0",
                 "phpunit/phpunit": "^8.0 || ^9.0"
             },
-            "time": "2021-03-17T13:42:18+00:00",
+            "time": "2021-09-10T09:02:12+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.11.x-dev"
+                    "dev-master": "1.x-dev"
                 }
             },
             "installation-source": "dist",
@@ -2753,7 +2756,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phpspec/prophecy/issues",
-                "source": "https://github.com/phpspec/prophecy/tree/1.13.0"
+                "source": "https://github.com/phpspec/prophecy/tree/1.14.0"
             },
             "install-path": "../phpspec/prophecy"
         },
@@ -4885,87 +4888,18 @@
             "install-path": "../spatie/backtrace"
         },
         {
-            "name": "spatie/data-transfer-object",
-            "version": "3.7.0",
-            "version_normalized": "3.7.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/data-transfer-object.git",
-                "reference": "34289b121067206701c0e6efa7fb0f1fd3453764"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/data-transfer-object/zipball/34289b121067206701c0e6efa7fb0f1fd3453764",
-                "reference": "34289b121067206701c0e6efa7fb0f1fd3453764",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "illuminate/collections": "^8.36",
-                "jetbrains/phpstorm-attributes": "^1.0",
-                "larapack/dd": "^1.1",
-                "phpunit/phpunit": "^9.0"
-            },
-            "suggest": {
-                "phpstan/phpstan": "Take advantage of checkUninitializedProperties with \\Spatie\\DataTransferObject\\PHPstan\\PropertiesAreAlwaysInitializedExtension"
-            },
-            "time": "2021-08-26T09:53:42+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\DataTransferObject\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Brent Roose",
-                    "email": "brent@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Data transfer objects with batteries included",
-            "homepage": "https://github.com/spatie/data-transfer-object",
-            "keywords": [
-                "data-transfer-object",
-                "spatie"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/data-transfer-object/issues",
-                "source": "https://github.com/spatie/data-transfer-object/tree/3.7.0"
-            },
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "install-path": "../spatie/data-transfer-object"
-        },
-        {
             "name": "spatie/laravel-ray",
-            "version": "1.25.1",
-            "version_normalized": "1.25.1.0",
+            "version": "1.25.2",
+            "version_normalized": "1.25.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ray.git",
-                "reference": "67481e11a026835f72652e073527dc11a85fcce8"
+                "reference": "9379ed902a42d8909051d9bd5ca05a7329be7b87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ray/zipball/67481e11a026835f72652e073527dc11a85fcce8",
-                "reference": "67481e11a026835f72652e073527dc11a85fcce8",
+                "url": "https://api.github.com/repos/spatie/laravel-ray/zipball/9379ed902a42d8909051d9bd5ca05a7329be7b87",
+                "reference": "9379ed902a42d8909051d9bd5ca05a7329be7b87",
                 "shasum": ""
             },
             "require": {
@@ -4989,7 +4923,7 @@
                 "phpunit/phpunit": "^9.3",
                 "spatie/phpunit-snapshot-assertions": "^4.2"
             },
-            "time": "2021-09-07T07:27:13+00:00",
+            "time": "2021-09-10T07:21:33+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -5024,7 +4958,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-ray/issues",
-                "source": "https://github.com/spatie/laravel-ray/tree/1.25.1"
+                "source": "https://github.com/spatie/laravel-ray/tree/1.25.2"
             },
             "funding": [
                 {
@@ -5093,17 +5027,17 @@
         },
         {
             "name": "spatie/ray",
-            "version": "1.30.1",
-            "version_normalized": "1.30.1.0",
+            "version": "1.30.2",
+            "version_normalized": "1.30.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/ray.git",
-                "reference": "a189f18b7f1d944859a434e31a3c467591013056"
+                "reference": "f6344f8abf3ede60c963d9d3f7f35fb526b6138c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/ray/zipball/a189f18b7f1d944859a434e31a3c467591013056",
-                "reference": "a189f18b7f1d944859a434e31a3c467591013056",
+                "url": "https://api.github.com/repos/spatie/ray/zipball/f6344f8abf3ede60c963d9d3f7f35fb526b6138c",
+                "reference": "f6344f8abf3ede60c963d9d3f7f35fb526b6138c",
                 "shasum": ""
             },
             "require": {
@@ -5124,7 +5058,7 @@
                 "spatie/phpunit-snapshot-assertions": "^4.2",
                 "spatie/test-time": "^1.2"
             },
-            "time": "2021-09-07T12:49:09+00:00",
+            "time": "2021-09-10T07:22:57+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -5155,7 +5089,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/ray/issues",
-                "source": "https://github.com/spatie/ray/tree/1.30.1"
+                "source": "https://github.com/spatie/ray/tree/1.30.2"
             },
             "funding": [
                 {
@@ -8333,5 +8267,9 @@
         }
     ],
     "dev": true,
-    "dev-package-names": []
+    "dev-package-names": [
+        "paragonie/constant_time_encoding",
+        "paragonie/random_compat",
+        "phpseclib/phpseclib"
+    ]
 }

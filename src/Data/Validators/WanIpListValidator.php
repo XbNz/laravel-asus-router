@@ -26,7 +26,7 @@ class WanIpListValidator implements ValidatorInterface
         if ($validIps->isEmpty()){
             throw new NoPublicIpDetectedException('Was not able to find a public IP address');
         }
-        return $validIps;
+        return $validIps->unique();
     }
 
     public function supports(): string

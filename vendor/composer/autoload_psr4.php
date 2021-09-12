@@ -49,7 +49,6 @@ return array(
     'Spatie\\Ray\\' => array($vendorDir . '/spatie/ray/src'),
     'Spatie\\Macroable\\' => array($vendorDir . '/spatie/macroable/src'),
     'Spatie\\LaravelRay\\' => array($vendorDir . '/spatie/laravel-ray/src'),
-    'Spatie\\DataTransferObject\\' => array($vendorDir . '/spatie/data-transfer-object/src'),
     'Spatie\\Backtrace\\' => array($vendorDir . '/spatie/backtrace/src'),
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
     'Ramsey\\Collection\\' => array($vendorDir . '/ramsey/collection/src'),

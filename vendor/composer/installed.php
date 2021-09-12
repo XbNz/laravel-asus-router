@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '7cde53729f2952815900d6debe4067af0df314b4',
+    'reference' => 'd866d749ec1f16ccac908e32069fac1ac18f3e09',
     'name' => 'xbnz/laravel-asus-router',
   ),
   'versions' => 
@@ -128,217 +128,217 @@
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/broadcasting' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/bus' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/cache' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/collections' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/config' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/console' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/container' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/contracts' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/cookie' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/database' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/encryption' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/events' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/filesystem' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/hashing' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/http' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/log' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/macroable' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/mail' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/notifications' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/pagination' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/pipeline' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/queue' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/redis' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/routing' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/session' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/support' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/testing' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/translation' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/validation' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'illuminate/view' => 
     array (
       'replaced' => 
       array (
-        0 => 'v8.59.0',
+        0 => 'v8.60.0',
       ),
     ),
     'kodova/hamcrest-php' => 
@@ -350,12 +350,12 @@
     ),
     'laravel/framework' => 
     array (
-      'pretty_version' => 'v8.59.0',
-      'version' => '8.59.0.0',
+      'pretty_version' => 'v8.60.0',
+      'version' => '8.60.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '51d4755cc6232e7f8abb437567d713fa37661da2',
+      'reference' => '44f16a31a1d4ac8a51605550d7796e2273984a48',
     ),
     'league/commonmark' => 
     array (
@@ -478,21 +478,21 @@
     ),
     'orchestra/testbench' => 
     array (
-      'pretty_version' => 'v6.20.1',
-      'version' => '6.20.1.0',
+      'pretty_version' => 'v6.21.0',
+      'version' => '6.21.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '986ff30846bca4547cf11ed422511673450dcb02',
+      'reference' => '9082c6e2b8abd5e8aacb7c2895f24c1b1b3f59f1',
     ),
     'orchestra/testbench-core' => 
     array (
-      'pretty_version' => 'v6.24.1',
-      'version' => '6.24.1.0',
+      'pretty_version' => 'v6.25.1',
+      'version' => '6.25.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => '0e77a2e62cf9be1e541cb44f65d3ac4774015c87',
+      'reference' => '99fb87c96cc7876176217470f81b447e4deb41e8',
     ),
     'paragonie/constant_time_encoding' => 
     array (
@@ -577,12 +577,12 @@
     ),
     'phpspec/prophecy' => 
     array (
-      'pretty_version' => '1.13.0',
-      'version' => '1.13.0.0',
+      'pretty_version' => '1.14.0',
+      'version' => '1.14.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'be1996ed8adc35c3fd795488a653f4b518be70ea',
+      'reference' => 'd86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e',
     ),
     'phpunit/php-code-coverage' => 
     array (
@@ -924,23 +924,14 @@
       ),
       'reference' => '9b4df807fb65aaa8006dcd7a7ccdef8fb4bb002e',
     ),
-    'spatie/data-transfer-object' => 
-    array (
-      'pretty_version' => '3.7.0',
-      'version' => '3.7.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '34289b121067206701c0e6efa7fb0f1fd3453764',
-    ),
     'spatie/laravel-ray' => 
     array (
-      'pretty_version' => '1.25.1',
-      'version' => '1.25.1.0',
+      'pretty_version' => '1.25.2',
+      'version' => '1.25.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '67481e11a026835f72652e073527dc11a85fcce8',
+      'reference' => '9379ed902a42d8909051d9bd5ca05a7329be7b87',
     ),
     'spatie/macroable' => 
     array (
@@ -953,12 +944,12 @@
     ),
     'spatie/ray' => 
     array (
-      'pretty_version' => '1.30.1',
-      'version' => '1.30.1.0',
+      'pretty_version' => '1.30.2',
+      'version' => '1.30.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'a189f18b7f1d944859a434e31a3c467591013056',
+      'reference' => 'f6344f8abf3ede60c963d9d3f7f35fb526b6138c',
     ),
     'spatie/ssh' => 
     array (
@@ -1314,7 +1305,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '7cde53729f2952815900d6debe4067af0df314b4',
+      'reference' => 'd866d749ec1f16ccac908e32069fac1ac18f3e09',
     ),
     'zbateson/mail-mime-parser' => 
     array (
