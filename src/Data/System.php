@@ -15,6 +15,6 @@ class System extends DataObject
             ->execute('nvram get sshd_authkeys')->getOutput();
 
         $validator = $this->giveValidatorFor('system-rsa-list');
-        return $validator->validate($rawOutput);
+        return $validator->validate($rawOutput)->flatten();
     }
 }

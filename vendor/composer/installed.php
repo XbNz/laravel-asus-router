@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '8e2fc3a4ca0d432b3e29ec773aa40b41e92acc18',
+    'reference' => '7cde53729f2952815900d6debe4067af0df314b4',
     'name' => 'xbnz/laravel-asus-router',
   ),
   'versions' => 
@@ -494,6 +494,24 @@
       ),
       'reference' => '0e77a2e62cf9be1e541cb44f65d3ac4774015c87',
     ),
+    'paragonie/constant_time_encoding' => 
+    array (
+      'pretty_version' => 'v2.4.0',
+      'version' => '2.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f34c2b11eb9d2c9318e13540a1dbc2a3afbd939c',
+    ),
+    'paragonie/random_compat' => 
+    array (
+      'pretty_version' => 'v9.99.100',
+      'version' => '9.99.100.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '996434e5492cb4c3edcb9168db6fbb1359ef965a',
+    ),
     'phar-io/manifest' => 
     array (
       'pretty_version' => '2.0.3',
@@ -547,6 +565,15 @@
       array (
       ),
       'reference' => '5455cb38aed4523f99977c4a12ef19da4bfe2a28',
+    ),
+    'phpseclib/phpseclib' => 
+    array (
+      'pretty_version' => '3.0.10',
+      'version' => '3.0.10.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '62fcc5a94ac83b1506f52d7558d828617fac9187',
     ),
     'phpspec/prophecy' => 
     array (
@@ -1287,7 +1314,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '8e2fc3a4ca0d432b3e29ec773aa40b41e92acc18',
+      'reference' => '7cde53729f2952815900d6debe4067af0df314b4',
     ),
     'zbateson/mail-mime-parser' => 
     array (
