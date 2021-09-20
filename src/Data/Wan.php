@@ -21,4 +21,16 @@ class Wan extends DataObject
         $validator = $this->giveValidatorFor('wan-ip-list');
         return $validator->validate($rawOutput);
     }
+
+    public function getDnsList()
+    {
+        $rawOutput = app(Ssh::class)
+            ->execute([
+                'nvram get wan_dns1_x',
+                'nvram get wan_dns2_x',
+            ])->getOutput();
+
+        $validator = $this->giveValidatorFor('wan-ip-list');
+        return $validator->validate($rawOutput);
+    }
 }

@@ -39,4 +39,23 @@ class SystemTest extends TestCase
         RSA::load($keyList[0]);
         RSA::load($keyList[1]);
     }
+
+    /** @test */
+    public function it_returns_the_router_model()
+    {
+        $processMock = $this->createMock(Process::class);
+        $processMock->method('getOutput')
+            ->willReturn('RT-AX88U' . PHP_EOL);
+
+        $processMock->method('isSuccessful')
+            ->willReturn(true);
+
+        $sshMock = $this->mock(Ssh::class);
+        $sshMock->shouldReceive('execute')
+            ->andReturn($processMock);
+
+        $router = new Router();
+        $model = $router->system()->getRouterModel();
+        $this->assertStringContainsString('RT-AX88U', $model);
+    }
 }

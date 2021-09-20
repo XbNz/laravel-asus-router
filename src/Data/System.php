@@ -17,4 +17,12 @@ class System extends DataObject
         $validator = $this->giveValidatorFor('system-rsa-list');
         return $validator->validate($rawOutput)->flatten();
     }
+
+    public function getRouterModel(): string | null
+    {
+        $rawOutput = app(Ssh::class)
+            ->execute('nvram get model')->getOutput();
+
+        return trim($rawOutput) ?? null;
+    }
 }
