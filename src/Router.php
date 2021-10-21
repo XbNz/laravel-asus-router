@@ -16,7 +16,8 @@ class Router
 {
     public function __construct()
     {
-        if (! $this->healthCheck()){
+        if (
+            ! $this->healthCheck()){
             throw new RouterSshException('I ran a health check on the SSH connection and it failed. I suspect there is something wrong with the port, username or SSH key.');
         }
     }
